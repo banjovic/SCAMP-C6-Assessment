@@ -64,6 +64,15 @@ body {
   color: #e0dcd9;
 }
 
+.slick-slider img {
+  width: 500px;
+  border-radius: 5px;
+}
+
+.slick-slider .slick-dots.slick-thumb img {
+  width: 25px;
+}
+
 .App {
   text-align: center;
 }

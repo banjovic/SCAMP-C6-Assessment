@@ -12,12 +12,16 @@
 // #28201e
 
 .product-page {
+  margin: 0 auto;
+  padding: 0 auto;
+  align-items: center;
+
   nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0 50px;
-    padding: 30px 0;
+    padding: 30px;
     border-bottom: 1px solid rgba(153, 153, 153, 0.4);
 
     .product-nav-left {
@@ -26,6 +30,10 @@
       justify-content: space-between;
       gap: 50px;
       align-items: center;
+
+      @media (max-width: 790px) {
+        gap: 10px;
+      }
 
       h1 {
         letter-spacing: -2px;
@@ -40,9 +48,25 @@
         align-items: center;
         align-content: center;
 
+        @media (max-width: 790px) {
+          display: none;
+        }
+
         li {
           font-weight: 600;
           color: #999999;
+        }
+      }
+
+      .menu-bar {
+        display: none;
+
+        @media (max-width: 790px) {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 20px;
+          align-items: center;
         }
       }
     }
@@ -59,15 +83,74 @@
         border-radius: 50%;
       }
     }
+
+    .active {
+      background: #2b2422;
+      width: 300px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      transition: 850ms;
+      z-index: 1;
+      transform-origin: 350ms;
+      padding: 35px 20px;
+
+      li {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 25px;
+        color: #e0dcd9;
+        cursor: pointer;
+        margin-top: 20px;
+
+        a {
+          font-weight: bold;
+          font-size: 25px;
+          line-height: 25px;
+          color: #e0dcd9;
+        }
+      }
+
+      .close {
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 25px;
+        // color: #e0dcd9 !important;
+        cursor: pointer;
+        text-align: right;
+      }
+    }
   }
 
-  main{
+  main {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 30px;
-    margin: 0 50px;
-    padding: 30px 40px;
+    justify-content: space-between;
+    gap: 50px;
+    margin: 0 auto;
+    padding: 150px 50px;
     align-items: center;
+    max-width: 1200px;
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 80px;
+      padding: 100px 30px;
+      margin: 0 auto;
+    }
+
+    .main-div {
+      width: 50%;
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
   }
 }
